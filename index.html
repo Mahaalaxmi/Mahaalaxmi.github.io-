@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        background-color: #f5f5f5;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+      }
+
+      .section1 {
+        width: 70%;
+        height: 12rem;
+        /* background-color: rgb(65, 125, 228); */
+        background: #56ccf2; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #2f80ed,
+          #56ccf2
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2f80ed, #56ccf2);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        box-shadow: 4.6px 4.4px 10px rgba(0, 0, 0, 0.085),
+          37px 35px 80px rgba(0, 0, 0, 0.17);
+      }
+      .section1 h1,
+      h3 {
+        color: white;
+      }
+
+      .profile-img-section {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .profile-data {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .profile-img {
+        height: 8rem;
+        width: 8rem;
+        background: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 75px;
+        border: 8px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .section2 {
+        width: 70%;
+        height: 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 10px;
+      }
+
+      .section3 {
+        width: 70%;
+        height: 20rem;
+        /* background-color: aquamarine; */
+        /* border: 1px solid rgb(65, 125, 228); */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 10px;
+      }
+
+      .section4 {
+        width: 70%;
+        height: 15rem;
+        /* background-color: aquamarine; */
+        /* border: 1px solid rgb(65, 125, 228); */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 10px;
+      }
+
+      .section-title {
+        /* height: 10%; */
+        color: rgb(65, 125, 228);
+        font-weight: bold;
+      }
+
+      .ed-table {
+        width: 100%;
+        border: 1px solid gray;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 1rem;
+        border: 1px solid gray;
+      }
+
+      .companies {
+        font-weight: bold;
+        color: rgb(65, 125, 228);
+      }
+
+      .color-primary {
+        color: rgb(65, 125, 228);
+      }
+
+      .section5 {
+        width: 70%;
+        height: 10rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 10px;
+      }
+
+      .section6 {
+        width: 70%;
+        height: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        font-weight: bold;
+        padding: 6px;
+
+        background: #667db6; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #667db6,
+          #0082c8,
+          #0082c8,
+          #667db6
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #667db6,
+          #0082c8,
+          #0082c8,
+          #667db6
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      li {
+        list-style: square;
+        margin-left: 2rem;
+      }
+
+      .text-white {
+        color: white;
+      }
+
+      /* From Uiverse.io by alexmaracinaru */
+      .cta {
+        position: relative;
+        margin: auto;
+        padding: 12px 18px;
+        transition: all 0.2s ease;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+
+      .cta:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 50px;
+        background: #b1dae7;
+        width: 45px;
+        height: 45px;
+        transition: all 0.3s ease;
+      }
+
+      .cta span {
+        position: relative;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #234567;
+      }
+
+      .cta svg {
+        position: relative;
+        top: 0;
+        margin-left: 10px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #234567;
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: all 0.3s ease;
+      }
+
+      .cta:hover:before {
+        width: 100%;
+        background: #b1dae7;
+      }
+
+      .cta:hover svg {
+        transform: translateX(0);
+      }
+
+      .cta:active {
+        transform: scale(0.95);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="section1">
+      <div class="profile-img-section">
+        <img
+          src="./assets/img/close-up-kitten-surrounded-by-flowers.jpg"
+          alt=""
+          class="profile-img"
+        />
+      </div>
+      <div class="profile-data">
+        <h1>MahaLakshmi K</h1>
+        <h3>mahakgm0827@gmail.com</h3>
+      </div>
+    </div>
+    <div class="section2">
+      <h1 class="section-title">Objective</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+        veritatis optio voluptatibus nisi quisquam maxime perspiciatis itaque
+        minus, et cumque placeat illo? Perferendis accusamus error repudiandae
+        natus dignissimos, accusantium eos.
+      </p>
+    </div>
+    <div class="section3">
+      <h1 class="section-title">Education</h1>
+      <table class="ed-table">
+        <tr>
+          <th>Degree</th>
+          <th>Campus</th>
+          <th>Score</th>
+        </tr>
+        <tr>
+          <td>Engg</td>
+          <td>SIET</td>
+          <td>87</td>
+        </tr>
+        <tr>
+          <td>Engg</td>
+          <td>SIET</td>
+          <td>87</td>
+        </tr>
+        <tr>
+          <td>Engg</td>
+          <td>SIET</td>
+          <td>87</td>
+        </tr>
+      </table>
+    </div>
+    <div class="section4">
+      <h1 class="section-title">InternShips</h1>
+      <p>
+        <span class="companies">Tech UC</span>
+        Aug 27 2022 to Sept 5 2022 Learned About the IOT Application and their
+        Usage in Industry
+      </p>
+      <br />
+      <p>
+        <span class="companies">Tech UC</span>
+        Aug 27 2022 to Sept 5 2022 Learned About the IOT Application and their
+        Usage in Industry
+      </p>
+    </div>
+    <div class="section5">
+      <h1 class="section-title color-primary">Skills</h1>
+      <br />
+      <ul>
+        <li>MERN</li>
+        <li>Java</li>
+        <li>DBMS</li>
+      </ul>
+    </div>
+    <div class="section6">
+      <a href="tel:+91 9943077813">
+        <button class="cta">
+          <span><i class="fa-solid fa-phone"></i></span>
+        </button>
+      </a>
+      <a href="mailto:mahakgm0827@gmail.com">
+        <button class="cta">
+          <span><i class="fa-solid fa-envelope"></i></span>
+        </button>
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank">
+        <button class="cta">
+          <span><i class="fa-brands fa-linkedin-in"></i></span>
+        </button>
+      </a>
+    </div>
+  </body>
+</html>
